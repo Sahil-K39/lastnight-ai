@@ -1,0 +1,27 @@
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p8
+*.p12
+*.jks
+*.keystore
+service-account*.json
+firebase-adminsdk*.json
+
+# Build output and dependencies
+node_modules/
+build/
+dist/
+coverage/
+.vite/
+.vercel/
+.netlify/
+
+# Editor and OS noise
+.DS_Store
+*.log
+.idea/
+.vscode/

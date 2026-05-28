@@ -1,0 +1,6 @@
+{
+  "name": "LastNight AI",
+  "description": "An elite exam preparation and study triage tool built for students starting the night before an exam.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_AI_API"]
+}
