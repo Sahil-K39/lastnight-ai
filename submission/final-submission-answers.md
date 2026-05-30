@@ -14,13 +14,19 @@ May 31, 2026, 11:59 PM IST
 
 ## Product / Demo Link
 
-Use the GitHub repo as the guaranteed accessible product link:
+Use the deployed Vercel URL as the live demo link after deploying:
+
+```text
+TODO: Add Vercel live product URL
+```
+
+Use the GitHub repo as the source/MVP link:
 
 ```text
 https://github.com/Sahil-K39/lastnight-ai
 ```
 
-If you deploy the web app before submitting, use the deployed Vercel/Netlify link first, and keep the GitHub repo as the source link.
+Vercel setup: import the GitHub repo, set the root directory to `lastnight-ai`, add backend-only Gemini env vars, and redeploy.
 
 ## Product Name
 

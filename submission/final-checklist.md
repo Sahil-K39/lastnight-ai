@@ -38,10 +38,12 @@ https://forms.gle/ocsow25Np3pm54K1A
 - [ ] Post LinkedIn or X announcement.
 - [ ] Paste final video, pitch deck, announcement, and GitHub links into the submission form.
 
-## Optional If You Deploy
+## Public Live Demo Link
 
+- [ ] Import the GitHub repo into Vercel.
+- [ ] Set the Vercel project root directory to `lastnight-ai`.
 - [ ] Rotate the Gemini API key.
-- [ ] Add backend-only Vercel env vars:
+- [ ] Add backend-only Vercel environment variables:
 
 ```bash
 AI_PROVIDER=gemini
@@ -50,4 +52,5 @@ GEMINI_MODEL=gemini-3.5-flash
 ```
 
 - [ ] Redeploy.
-- [ ] Test the deployed URL before submitting.
+- [ ] Test the deployed URL and `/api/health` before submitting.
+- [ ] Use the deployed Vercel URL as the **Live product/demo link** in the form.

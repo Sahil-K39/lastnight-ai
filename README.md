@@ -39,6 +39,12 @@ GEMINI_API_KEY=your_rotated_google_ai_studio_key
 GEMINI_MODEL=gemini-3.5-flash
 ```
 
+When importing the GitHub repo into Vercel, set the project root directory to:
+
+```text
+lastnight-ai
+```
+
 ## Flutter Demo
 
 ```bash

@@ -1,10 +1,9 @@
 import express, { NextFunction, Request, Response } from "express";
 import path from "path";
-import { createServer as createViteServer } from "vite";
 import dotenv from "dotenv";
 
-dotenv.config({ path: ".env.local" });
-dotenv.config();
+dotenv.config({ path: ".env.local", quiet: true });
+dotenv.config({ quiet: true });
 
 const app = express();
 const REQUEST_JSON_LIMIT = process.env.REQUEST_JSON_LIMIT || "35mb";
@@ -1401,6 +1400,7 @@ Here is the essential quick revision context for **${selectedQuestion}** under t
 // Configure Vite integration for dev vs prod
 async function startServer() {
   if (process.env.NODE_ENV !== "production") {
+    const { createServer: createViteServer } = await import("vite");
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: "spa",
@@ -1421,4 +1421,8 @@ async function startServer() {
   });
 }
 
-startServer();
+if (process.env.VERCEL !== "1") {
+  startServer();
+}
+
+export default app;
