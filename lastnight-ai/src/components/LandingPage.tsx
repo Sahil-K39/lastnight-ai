@@ -306,7 +306,7 @@ export default function LandingPage({ page, onNavigate, onStart }: LandingPagePr
               </h2>
             </div>
             <p className="text-[#cbc3d7]/80 max-w-xl leading-relaxed">
-              Keep the hackathon promise simple: upload material, ship a study kit, and scale up only when a class or campus needs the command layer.
+              Keep the hackathon promise simple: start free, unlock the student plan at INR pricing, and scale only when a class or campus needs the command layer.
             </p>
           </div>
 
@@ -321,8 +321,8 @@ export default function LandingPage({ page, onNavigate, onStart }: LandingPagePr
                 <span className="material-symbols-outlined text-[#4cd7f6] text-3xl">radar</span>
               </div>
               <div className="flex items-end gap-2 mb-8">
-                <span className="font-display text-5xl font-bold text-white">$0</span>
-                <span className="text-[#cbc3d7]/70 pb-2">/ start</span>
+                <span className="font-display text-5xl font-bold text-white">₹0</span>
+                <span className="text-[#cbc3d7]/70 pb-2">/ trial</span>
               </div>
               <div className="space-y-3 text-sm text-[#cbc3d7] mb-8">
                 <p className="flex items-center gap-2"><span className="material-symbols-outlined text-[#4cd7f6] text-lg">check</span>1 active study kit</p>
@@ -342,16 +342,16 @@ export default function LandingPage({ page, onNavigate, onStart }: LandingPagePr
               <div className="flex items-center justify-between gap-4 mb-8 pr-24">
                 <div>
                   <h3 className="font-display text-2xl font-semibold text-white tracking-tight">Pro Crunch</h3>
-                  <p className="text-sm text-[#cbc3d7]/70 mt-1">For students shipping every week.</p>
+                  <p className="text-sm text-[#cbc3d7]/70 mt-1">For students preparing every month.</p>
                 </div>
                 <span className="material-symbols-outlined text-[#d0bcff] text-3xl">rocket_launch</span>
               </div>
               <div className="flex items-end gap-2 mb-8">
-                <span className="font-display text-5xl font-bold text-white">$9</span>
+                <span className="font-display text-5xl font-bold text-white">₹149</span>
                 <span className="text-[#cbc3d7]/70 pb-2">/ month</span>
               </div>
               <div className="space-y-3 text-sm text-[#cbc3d7] mb-8">
-                <p className="flex items-center gap-2"><span className="material-symbols-outlined text-[#d0bcff] text-lg">check</span>Unlimited study kits</p>
+                <p className="flex items-center gap-2"><span className="material-symbols-outlined text-[#d0bcff] text-lg">check</span>Student monthly access</p>
                 <p className="flex items-center gap-2"><span className="material-symbols-outlined text-[#d0bcff] text-lg">check</span>Full quiz and viva simulator</p>
                 <p className="flex items-center gap-2"><span className="material-symbols-outlined text-[#d0bcff] text-lg">check</span>Saved exam timelines</p>
               </div>
@@ -371,6 +371,7 @@ export default function LandingPage({ page, onNavigate, onStart }: LandingPagePr
               </div>
               <div className="flex items-end gap-2 mb-8">
                 <span className="font-display text-5xl font-bold text-white">Custom</span>
+                <span className="text-[#cbc3d7]/70 pb-2">INR</span>
               </div>
               <div className="space-y-3 text-sm text-[#cbc3d7] mb-8">
                 <p className="flex items-center gap-2"><span className="material-symbols-outlined text-[#adc6ff] text-lg">check</span>Shared subject workspaces</p>
@@ -698,8 +699,8 @@ function PricingPage({
   const plans = [
     {
       name: "Free Scout",
-      price: "$0",
-      detail: "For one urgent exam sprint.",
+      price: "₹0",
+      detail: "For one urgent exam trial.",
       icon: "radar",
       accent: "text-[#4cd7f6]",
       items: ["1 active study kit", "Prediction preview", "Revision sheet export"],
@@ -708,17 +709,17 @@ function PricingPage({
     },
     {
       name: "Pro Crunch",
-      price: "$9",
-      detail: "For weekly study-kit shipping.",
+      price: "₹149/mo",
+      detail: "Student plan for monthly exam prep.",
       icon: "rocket_launch",
       accent: "text-[#d0bcff]",
-      items: ["Unlimited kits", "Quiz and viva simulator", "Saved study timelines"],
+      items: ["Student monthly access", "Quiz and viva simulator", "Saved study timelines"],
       action: () => onStart("dashboard"),
       cta: "Open Dashboard",
     },
     {
       name: "Campus Command",
-      price: "Custom",
+      price: "Custom INR",
       detail: "For cohorts and campus teams.",
       icon: "domain",
       accent: "text-[#adc6ff]",
@@ -733,7 +734,7 @@ function PricingPage({
       <MarketingHero
         eyebrow="Pricing Page"
         title="Simple plans for a product that has to work before exam night ends."
-        body="Start free, upgrade for repeat study kits, and use Campus Command when a cohort needs a shared AI prep layer."
+        body="Start free, upgrade to the ₹149/month student plan for repeat study kits, and use Campus Command when a cohort needs a shared AI prep layer."
         icon="payments"
         accent="bg-gradient-to-r from-[#ffc857] via-[#d0bcff] to-[#4cd7f6]"
         onStart={onStart}
