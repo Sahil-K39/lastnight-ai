@@ -7,7 +7,7 @@ LastNight AI is built for students who open their syllabus the night before the 
 ## Live Walkthrough
 
 1. Start on the cinematic landing page.
-2. Show the pricing section with student-friendly INR pricing: `₹149/month`.
+2. Show the pricing section with all real-life INR plans: `₹0`, `₹49 / 72 hours`, `₹149/month`, `₹399 / 3 months`, and `Custom INR`.
 3. Click **Start Preparing**.
 4. Enter `Operating Systems`.
 5. Upload or stage PYQ/syllabus material.

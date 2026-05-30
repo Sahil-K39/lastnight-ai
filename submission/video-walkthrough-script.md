@@ -21,7 +21,7 @@ The problem is simple: many students start studying the night before an exam. Th
 Show the landing page, pricing, and start flow.
 
 ```text
-LastNight AI lets a student enter a subject, upload study material, choose how much time is left, and generate a structured exam survival kit. I also added student-friendly INR pricing at ₹149 per month.
+LastNight AI lets a student enter a subject, upload study material, choose how much time is left, and generate a structured exam survival kit. I also added real-life INR pricing: ₹0 trial, ₹49 Exam Night Pass, ₹149/month Student Crunch, ₹399 Semester Pro, and Custom INR for campuses.
 ```
 
 ## 2:30-4:40 — Live Demo

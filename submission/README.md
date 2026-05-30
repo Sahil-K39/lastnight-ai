@@ -29,6 +29,6 @@ This is framed as a shipping competition, so the demo focuses on the working pro
 
 - GitHub repo pushed: `https://github.com/Sahil-K39/lastnight-ai`
 - Local demo: `http://127.0.0.1:3000`
-- Student pricing: `₹149/month`
+- Real-life pricing: `₹0 trial`, `₹49 / 72 hours`, `₹149/month`, `₹399 / 3 months`, and `Custom INR` for campuses
 - API keys are backend-only and ignored by git.
 - The pasted Gemini key should be treated as compromised and rotated before Vercel demo use.

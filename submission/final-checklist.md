@@ -25,7 +25,7 @@ https://forms.gle/ocsow25Np3pm54K1A
 - [x] Demo script: `submission/video-walkthrough-script.md`
 - [x] Social post drafts: `submission/social-announcement-posts.md`
 - [x] Form answer draft: `submission/final-submission-answers.md`
-- [x] INR pricing: `₹149/month`
+- [x] INR pricing: `₹0 trial`, `₹49 / 72 hours`, `₹149/month`, `₹399 / 3 months`, `Custom INR`
 - [x] Secret scan checked for exposed keys in files
 
 ## Do Before Submitting

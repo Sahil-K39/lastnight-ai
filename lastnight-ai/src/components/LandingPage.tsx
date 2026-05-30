@@ -34,6 +34,70 @@ export default function LandingPage({ page, onNavigate, onStart }: LandingPagePr
         : "text-[#cbc3d7] bg-white/5 border-white/10",
     ].join(" ");
 
+  const pricingPlans = [
+    {
+      name: "Free Scout",
+      price: "₹0",
+      period: "/ trial",
+      detail: "For one urgent exam trial.",
+      icon: "radar",
+      accent: "text-[#4cd7f6]",
+      stripe: "bg-[#4cd7f6]/70",
+      items: ["1 active study kit", "Prediction preview", "Revision sheet generation"],
+      action: () => onStart("upload"),
+      cta: "Try Upload",
+    },
+    {
+      name: "Exam Night Pass",
+      price: "₹49",
+      period: "/ 72h",
+      detail: "For one paper this week.",
+      icon: "nightlight",
+      accent: "text-[#ffc857]",
+      stripe: "bg-[#ffc857]/80",
+      items: ["Full kit for one exam", "PYQ + notes analysis", "Panic-mode timeline"],
+      action: () => onStart("upload"),
+      cta: "Start 72h Pass",
+    },
+    {
+      name: "Student Crunch",
+      price: "₹149",
+      period: "/ month",
+      detail: "For monthly exam prep.",
+      icon: "rocket_launch",
+      accent: "text-[#d0bcff]",
+      stripe: "bg-gradient-to-r from-[#a078ff] to-[#4cd7f6]",
+      items: ["Repeat study kits", "Quiz and viva simulator", "Saved exam timelines"],
+      action: () => onStart("dashboard"),
+      cta: "Open Dashboard",
+      featured: true,
+    },
+    {
+      name: "Semester Pro",
+      price: "₹399",
+      period: "/ 3 months",
+      detail: "For midterms and finals.",
+      icon: "school",
+      accent: "text-[#10b981]",
+      stripe: "bg-[#10b981]/80",
+      items: ["Semester-long access", "All monthly features", "Better exam-season value"],
+      action: () => onStart("dashboard"),
+      cta: "Choose Semester",
+    },
+    {
+      name: "Campus Command",
+      price: "Custom",
+      period: "INR",
+      detail: "For cohorts and colleges.",
+      icon: "domain",
+      accent: "text-[#adc6ff]",
+      stripe: "bg-[#adc6ff]/70",
+      items: ["Shared workspaces", "Admin controls", "Private deployment options"],
+      action: () => navigatePage("enterprise"),
+      cta: "View Enterprise",
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-[#05070d] text-[#e2e2e8] font-sans antialiased overflow-x-hidden relative">
       <CinematicScene density="active" />
@@ -306,82 +370,46 @@ export default function LandingPage({ page, onNavigate, onStart }: LandingPagePr
               </h2>
             </div>
             <p className="text-[#cbc3d7]/80 max-w-xl leading-relaxed">
-              Keep the hackathon promise simple: start free, unlock the student plan at INR pricing, and scale only when a class or campus needs the command layer.
+              Real-life INR pricing for one-night emergencies, monthly students, semester prep, and campus cohorts.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <div className="feature-card rounded-xl p-7 relative overflow-hidden">
-              <div className="absolute inset-x-0 top-0 h-1 bg-[#4cd7f6]/70"></div>
-              <div className="flex items-center justify-between gap-4 mb-8">
-                <div>
-                  <h3 className="font-display text-2xl font-semibold text-white tracking-tight">Free Scout</h3>
-                  <p className="text-sm text-[#cbc3d7]/70 mt-1">For one urgent exam run.</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-5">
+            {pricingPlans.map((plan) => (
+              <div
+                key={plan.name}
+                className={`feature-card rounded-xl p-6 relative overflow-hidden ${plan.featured ? "border-[#d0bcff]/35 shadow-[0_0_40px_rgba(160,120,255,0.12)]" : ""}`}
+              >
+                <div className={`absolute inset-x-0 top-0 h-1 ${plan.stripe}`}></div>
+                {plan.featured && (
+                  <div className="absolute right-4 top-4 px-2.5 py-1 rounded-full border border-[#d0bcff]/30 bg-[#d0bcff]/10 font-mono text-[9px] uppercase tracking-widest text-[#d0bcff]">
+                    Popular
+                  </div>
+                )}
+                <div className={`flex items-center justify-between gap-4 mb-7 ${plan.featured ? "pr-20" : ""}`}>
+                  <div>
+                    <h3 className="font-display text-xl font-semibold text-white tracking-tight">{plan.name}</h3>
+                    <p className="text-sm text-[#cbc3d7]/70 mt-1">{plan.detail}</p>
+                  </div>
+                  <span className={`material-symbols-outlined ${plan.accent} text-3xl`}>{plan.icon}</span>
                 </div>
-                <span className="material-symbols-outlined text-[#4cd7f6] text-3xl">radar</span>
-              </div>
-              <div className="flex items-end gap-2 mb-8">
-                <span className="font-display text-5xl font-bold text-white">₹0</span>
-                <span className="text-[#cbc3d7]/70 pb-2">/ trial</span>
-              </div>
-              <div className="space-y-3 text-sm text-[#cbc3d7] mb-8">
-                <p className="flex items-center gap-2"><span className="material-symbols-outlined text-[#4cd7f6] text-lg">check</span>1 active study kit</p>
-                <p className="flex items-center gap-2"><span className="material-symbols-outlined text-[#4cd7f6] text-lg">check</span>Question prediction preview</p>
-                <p className="flex items-center gap-2"><span className="material-symbols-outlined text-[#4cd7f6] text-lg">check</span>Revision sheet generation</p>
-              </div>
-              <button onClick={() => onStart("upload")} className="w-full glow-btn rounded-lg py-3 font-mono text-[11px] uppercase tracking-widest text-white">
-                Try Upload
-              </button>
-            </div>
-
-            <div className="feature-card rounded-xl p-7 relative overflow-hidden border-[#d0bcff]/35 shadow-[0_0_40px_rgba(160,120,255,0.12)]">
-              <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#a078ff] to-[#4cd7f6]"></div>
-              <div className="absolute right-5 top-5 px-3 py-1 rounded-full border border-[#d0bcff]/30 bg-[#d0bcff]/10 font-mono text-[10px] uppercase tracking-widest text-[#d0bcff]">
-                Popular
-              </div>
-              <div className="flex items-center justify-between gap-4 mb-8 pr-24">
-                <div>
-                  <h3 className="font-display text-2xl font-semibold text-white tracking-tight">Pro Crunch</h3>
-                  <p className="text-sm text-[#cbc3d7]/70 mt-1">For students preparing every month.</p>
+                <div className="flex items-end gap-1.5 mb-7">
+                  <span className="font-display text-4xl font-bold text-white">{plan.price}</span>
+                  <span className="text-[#cbc3d7]/70 pb-1.5 text-sm">{plan.period}</span>
                 </div>
-                <span className="material-symbols-outlined text-[#d0bcff] text-3xl">rocket_launch</span>
-              </div>
-              <div className="flex items-end gap-2 mb-8">
-                <span className="font-display text-5xl font-bold text-white">₹149</span>
-                <span className="text-[#cbc3d7]/70 pb-2">/ month</span>
-              </div>
-              <div className="space-y-3 text-sm text-[#cbc3d7] mb-8">
-                <p className="flex items-center gap-2"><span className="material-symbols-outlined text-[#d0bcff] text-lg">check</span>Student monthly access</p>
-                <p className="flex items-center gap-2"><span className="material-symbols-outlined text-[#d0bcff] text-lg">check</span>Full quiz and viva simulator</p>
-                <p className="flex items-center gap-2"><span className="material-symbols-outlined text-[#d0bcff] text-lg">check</span>Saved exam timelines</p>
-              </div>
-              <button onClick={() => onStart("dashboard")} className="w-full glow-btn rounded-lg py-3 font-mono text-[11px] uppercase tracking-widest text-white">
-                Open Dashboard
-              </button>
-            </div>
-
-            <div className="feature-card rounded-xl p-7 relative overflow-hidden">
-              <div className="absolute inset-x-0 top-0 h-1 bg-[#adc6ff]/70"></div>
-              <div className="flex items-center justify-between gap-4 mb-8">
-                <div>
-                  <h3 className="font-display text-2xl font-semibold text-white tracking-tight">Campus Command</h3>
-                  <p className="text-sm text-[#cbc3d7]/70 mt-1">For cohorts, clubs, and colleges.</p>
+                <div className="space-y-3 text-sm text-[#cbc3d7] mb-7">
+                  {plan.items.map((item) => (
+                    <p key={item} className="flex items-center gap-2">
+                      <span className={`material-symbols-outlined ${plan.accent} text-lg`}>check</span>
+                      {item}
+                    </p>
+                  ))}
                 </div>
-                <span className="material-symbols-outlined text-[#adc6ff] text-3xl">domain</span>
+                <button onClick={plan.action} className="w-full glow-btn rounded-lg py-3 font-mono text-[10px] uppercase tracking-widest text-white">
+                  {plan.cta}
+                </button>
               </div>
-              <div className="flex items-end gap-2 mb-8">
-                <span className="font-display text-5xl font-bold text-white">Custom</span>
-                <span className="text-[#cbc3d7]/70 pb-2">INR</span>
-              </div>
-              <div className="space-y-3 text-sm text-[#cbc3d7] mb-8">
-                <p className="flex items-center gap-2"><span className="material-symbols-outlined text-[#adc6ff] text-lg">check</span>Shared subject workspaces</p>
-                <p className="flex items-center gap-2"><span className="material-symbols-outlined text-[#adc6ff] text-lg">check</span>Faculty-safe admin controls</p>
-                <p className="flex items-center gap-2"><span className="material-symbols-outlined text-[#adc6ff] text-lg">check</span>Private deployment options</p>
-              </div>
-              <button onClick={() => navigatePage("enterprise")} className="w-full border border-[#adc6ff]/35 bg-[#adc6ff]/10 hover:bg-[#adc6ff]/15 rounded-lg py-3 font-mono text-[11px] uppercase tracking-widest text-white transition-colors">
-                View Enterprise
-              </button>
-            </div>
+            ))}
           </div>
         </section>
 
@@ -700,6 +728,7 @@ function PricingPage({
     {
       name: "Free Scout",
       price: "₹0",
+      period: "/ trial",
       detail: "For one urgent exam trial.",
       icon: "radar",
       accent: "text-[#4cd7f6]",
@@ -708,18 +737,42 @@ function PricingPage({
       cta: "Try Upload",
     },
     {
-      name: "Pro Crunch",
-      price: "₹149/mo",
+      name: "Exam Night Pass",
+      price: "₹49",
+      period: "/ 72h",
+      detail: "For one paper this week.",
+      icon: "nightlight",
+      accent: "text-[#ffc857]",
+      items: ["Full kit for one exam", "PYQ + notes analysis", "Panic-mode timeline"],
+      action: () => onStart("upload"),
+      cta: "Start 72h Pass",
+    },
+    {
+      name: "Student Crunch",
+      price: "₹149",
+      period: "/ month",
       detail: "Student plan for monthly exam prep.",
       icon: "rocket_launch",
       accent: "text-[#d0bcff]",
-      items: ["Student monthly access", "Quiz and viva simulator", "Saved study timelines"],
+      items: ["Repeat study kits", "Quiz and viva simulator", "Saved study timelines"],
       action: () => onStart("dashboard"),
       cta: "Open Dashboard",
     },
     {
+      name: "Semester Pro",
+      price: "₹399",
+      period: "/ 3 months",
+      detail: "For midterms and finals.",
+      icon: "school",
+      accent: "text-[#10b981]",
+      items: ["Semester-long access", "All monthly features", "Best exam-season value"],
+      action: () => onStart("dashboard"),
+      cta: "Choose Semester",
+    },
+    {
       name: "Campus Command",
-      price: "Custom INR",
+      price: "Custom",
+      period: "INR",
       detail: "For cohorts and campus teams.",
       icon: "domain",
       accent: "text-[#adc6ff]",
@@ -734,13 +787,13 @@ function PricingPage({
       <MarketingHero
         eyebrow="Pricing Page"
         title="Simple plans for a product that has to work before exam night ends."
-        body="Start free, upgrade to the ₹149/month student plan for repeat study kits, and use Campus Command when a cohort needs a shared AI prep layer."
+        body="Start free, buy a ₹49 Exam Night Pass for one urgent paper, subscribe at ₹149/month, or pick ₹399 for a full semester."
         icon="payments"
         accent="bg-gradient-to-r from-[#ffc857] via-[#d0bcff] to-[#4cd7f6]"
         onStart={onStart}
       />
 
-      <section className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-6">
         {plans.map((plan) => (
           <div key={plan.name} className="feature-card rounded-xl p-7 relative overflow-hidden">
             <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#a078ff] to-[#4cd7f6]"></div>
@@ -751,7 +804,10 @@ function PricingPage({
               </div>
               <span className={`material-symbols-outlined ${plan.accent} text-3xl`}>{plan.icon}</span>
             </div>
-            <div className="font-display text-5xl font-bold text-white mb-8">{plan.price}</div>
+            <div className="flex items-end gap-1.5 mb-8">
+              <span className="font-display text-4xl font-bold text-white">{plan.price}</span>
+              <span className="text-[#cbc3d7]/70 pb-1.5 text-sm">{plan.period}</span>
+            </div>
             <div className="space-y-3 mb-8">
               {plan.items.map((item) => (
                 <p key={item} className="flex items-center gap-2 text-sm text-[#cbc3d7]">
